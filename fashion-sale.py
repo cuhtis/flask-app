@@ -43,4 +43,18 @@ def initdb_command():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    context = {
+        "title": "Hello World!"
+        }
+    return render_template('index.html', context=context)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    session['logged_in'] = True
+    return redirect(url_for('index'))
+
+@app.route('/logout')
+def logout():
+    session['logged_in'] = False
+    return redirect(url_for('index'))

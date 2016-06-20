@@ -1,7 +1,7 @@
 <div id="header">
-  {% if session.loggedin %}
-    Logged in!
+  {% if session.logged_in %}
+    <a href="{{ url_for('logout') }}">Logout</a>
   {% else %}
-    Not logged in!
+    <a href="{{ url_for('login') }}">Login</a>
   {% endif %}
 </div>

@@ -5,13 +5,44 @@ body {
   background: #EEEEEE;
   margin: 0px;
   padding: 0px;
+  
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
 }
 
 #header {
   color: #FFFFFF;
   width: 100%;
   background: #333333;
-  height: 100px;
+  height: 200px;
+  
+  /* flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* flexbox child */
+  order: -1;
+}
+
+#body {
+  height: 400px;
+
+  /* flexbox child */
+  order: 0;
 }
 
 #footer {
@@ -19,4 +50,13 @@ body {
   width: 100%;
   background: #FFFFFF;
   height: 100px;
+  
+  /* flexbox */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  
+  /* flexbox child */
+  order: 1000;
 }

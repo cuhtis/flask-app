@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fashion sales</title>
+  <title>{{ context.title }}</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet/style.css') }}">
+  {% block head %}{% endblock %}
 </head>
 <body>
   {% include "header.html" %}
-  {% block body %}{% endblock %}
+  <div id="body">
+    {% block body %}{% endblock %}
+  </div>
   {% include "footer.html" %}
 </body>
 </html>
